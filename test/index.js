@@ -1,7 +1,13 @@
 var FrostMail = require('../lib');
 
-var client = new FrostMail();
+var client = new FrostMail.Client();
 
-var users= ['ionmanager@gmail.com']
+var users = ['users@test.com','users2@test.com','users3@test.com']
 
-client.sendEmail("ionmanager@gmail.com", "qweqweqwe");
+var Properties = {
+    sendAt: Date.now(),
+    sendFrom: "noreply@test.com",
+    categorie: "Products"
+}
+
+client.sendEmail(users, "<h1>Body</h1>", "Test Subject", Properties);
